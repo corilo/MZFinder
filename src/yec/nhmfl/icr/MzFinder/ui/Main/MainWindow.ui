@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>753</width>
+    <height>449</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MzFinder</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../../../../res/MainRes.qrc">
+    <normaloff>:/icons/images/find.png</normaloff>:/icons/images/find.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Selected Files</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QListWidget" name="listWidget"/>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QPushButton" name="add_file_button">
+             <property name="text">
+              <string>Add</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="delete_file_button">
+             <property name="text">
+              <string>Delete</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="title">
+         <string>Look for m/z: </string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QTreeWidget" name="treeWidget">
+           <column>
+            <property name="text">
+             <string>m/z</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>m/z window</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Abundance Threshold</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QPushButton" name="add_mz_button">
+             <property name="text">
+              <string>Add</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="delete_mz_button">
+             <property name="text">
+              <string>Delete</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>Import from txt file </string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="text">
+         <string>Process</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>753</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOpen">
+    <property name="title">
+     <string>Open</string>
+    </property>
+    <addaction name="actionOpen_Thermo_raw"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+   </widget>
+   <addaction name="menuOpen"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen_Thermo_raw">
+   <property name="text">
+    <string>Open Thermo *.raw</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../../../../../../res/MainRes.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>add_file_button</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>361</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>87</x>
+     <y>432</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delete_file_button</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>delete_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>215</x>
+     <y>356</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>227</x>
+     <y>432</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>add_mz_button</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_mz()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>413</x>
+     <y>366</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>361</x>
+     <y>432</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delete_mz_button</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>delete_mz()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>457</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>432</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>process_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>574</x>
+     <y>411</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>549</x>
+     <y>432</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>import_from_text_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>560</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>749</x>
+     <y>361</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>add_file()</slot>
+  <slot>delete_file()</slot>
+  <slot>add_mz()</slot>
+  <slot>delete_mz()</slot>
+  <slot>process_clicked()</slot>
+  <slot>import_from_text_file()</slot>
+ </slots>
+</ui>
